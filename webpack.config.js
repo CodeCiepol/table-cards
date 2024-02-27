@@ -1,46 +1,36 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: path.join(__dirname, "src", "index.js"),
   output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
   mode: process.env.NODE_ENV || "development",
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  devServer: { static: path.join(__dirname, "src") },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
+        test: /\.css$/,
         use: [
-          {
-            loader: "ts-loader",
-            options: {
-              compilerOptions: {
-                noEmit: false,
-              },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(css|scss)$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-        use: ["file-loader"],
-      },
-    ],
+          MiniCssExtractPlugin.loader,
+          "css-loader", "postcss-loader",
+          ],
+      }
+    ]
   },
+  resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
+  devServer: { static: path.join(__dirname, "src"), port: 3000 },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "styles.css",
+      chunkFilename: "styles.css"
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
