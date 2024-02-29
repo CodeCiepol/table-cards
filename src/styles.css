@@ -1,3 +1,11 @@
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
+
+body, html, #fullheight  {
+    height: 100%;
+    margin: 0;
+  }
+.container {
+  background-color: blueviolet;
+}
