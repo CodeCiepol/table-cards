@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import SetSizeOfCard from "./options/setSizeOfCard";
+import SetSizeOfCard from "./options/SetSizeOfCard.jsx";
 // const
 const Options = (props) => {
   //Set size of card

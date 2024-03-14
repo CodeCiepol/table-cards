@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import Options from "./components/options";
-import Previev from "./components/preview";
-import Header from "./components/header";
+import Options from "./components/Options.jsx";
+import Previev from "./components/Preview.jsx";
+import Header from "./components/Header.jsx";
 
 const App = () => {
   const [size_of_card, set_size_of_card] = useState({ width: 20, height: 10 });
