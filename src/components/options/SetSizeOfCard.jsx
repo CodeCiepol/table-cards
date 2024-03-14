@@ -32,8 +32,8 @@ export default function SetSizeOfCard(props){
               <input
                 type="number"
                 id="width-input"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-1/3 p-2.5"
-                placeholder="x"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-1/5 p-2.5"
+                placeholder="width"
                 onChange={widthChangeHandler}
                 required
               />
@@ -41,8 +41,8 @@ export default function SetSizeOfCard(props){
               <input
                 type="number"
                 id="height-input"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5"
-                placeholder="y"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/5 p-2.5"
+                placeholder="height"
                 onChange={heightChangeHandler}
                 required
               />

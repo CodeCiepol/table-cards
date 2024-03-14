@@ -3,6 +3,8 @@ import { useState } from "react";
 import Options from "./components/Options.jsx";
 import Previev from "./components/Preview.jsx";
 import Header from "./components/Header.jsx";
+import printdiv from "./util/printPages.js";
+
 
 const App = () => {
   const [size_of_card, set_size_of_card] = useState({ width: 20, height: 10 });
@@ -13,9 +15,10 @@ const App = () => {
   
   return (
     <>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center ">
         <Header />
-        <div className="grid mt-6 grid-cols-2 justify-center gap-x-5 w-3/4">
+        {/* <div className="grid mt-6 grid-cols-2 justify-center gap-x-5 w-3/4"> */}
+        <div className="flex">
           <Options from_app_set_size_of_card={set_size_of_card_handler} />
           <Previev props_size_of_card={size_of_card}/>
         </div>
