@@ -16,7 +16,6 @@ body {
     }
 
     .paperToPrint {
-      background-color: white;
-      border-radius: 0
+      overflow: visible;
     }
 }

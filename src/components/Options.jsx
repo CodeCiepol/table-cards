@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import SetSizeOfCard from "./options/SetSizeOfCard.jsx";
+import AddGuests from "./options/AddGuests.jsx"
 // const
 const Options = (props) => {
   //Set size of card
@@ -8,6 +9,7 @@ const Options = (props) => {
     <>
       <div className="flex flex-col gap-4 hiddenAtPrint">
         <SetSizeOfCard from_option_set_size_of_card={props.from_app_set_size_of_card}/>
+        <AddGuests/>
         <div className="border-4 text-center border-solid border-slate-500 rounded-md bg-white">
           test
         </div>
